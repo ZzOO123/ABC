@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Form Test</title>
+		<!-- join.js 연결 -->
+		<script src="../js/join.js"></script>
+		<!-- ckeck_id 호출해서 work라고 하는 문자열 브라우저 콘솔 출력 -->
+		<style>
+				table, tr, td, th {
+					border : 1px solid black;
+				}	
+				table {
+					margin-top: 50PX;
+					border-collapse: collapse;
+				}
+				td.right {
+					/*width: 80px;*/
+					text-align: center;
+				}
+				#submit {
+					text-align: center;
+					padding: 10px;
+				}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table>
+				<tr><th>구분</th><th>입력태그</th><th>비고</th></tr>
+				
+				<tr>
+					<td class="right">아이디</td>
+					<td><input type="text" placeholder="your ID" value="" id="user_id"></td>
+					<td><input type="button" value="IDcheck" onclick="check_id()"></td>
+				</tr>
+				
+				<tr>
+					<td class="right">언어</td>
+					<td>
+						<input type="radio" name="lang" checked="checked" value="one">One
+						<input type="radio" name="lang" value="two">Two
+						<input type="radio" name="lang" value="three">Three
+					</td>
+					<td><input type="button" value="radio" onclick="checkRadio()"></td>
+				</tr>
+				
+				<tr>
+					<td class="right">툴</td>
+					<td>
+						<input type="checkbox" name="tools" checked="checked" value="1">One
+						<input type="checkbox" name="tools" value="2">Two
+						<input type="checkbox" name="tools" value="3">Three
+					</td>
+					<td><input type="button" value="checkbox" onclick="checkBox()"></td>
+				</tr>
+			
+				<tr>
+					<td class="right">선택</td>
+					<td>
+						<select>
+							<option>---select---
+							<option>One
+							<option selected="selected">Two
+						</select>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td class="right">버튼</td>
+					<td>
+						<button onclick="return getContentTag()">
+							<img src="../imgs/icon.png" width="25" height="25" id="img">
+						</button>
+					</td>
+					<td></td>
+				</tr>
+				
+				<tr>
+					<td class="right">자기소개</td>
+					<td>
+						<textarea rows="5" cols="40" id="myself">default</textarea>
+					</td>
+					<td></td>
+				</tr>
+				
+				<!-- 전체를 서버로 보냄 -->
+				<tr>
+					<td id="submit" colspan="3">
+						<input type="submit" value="Submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
